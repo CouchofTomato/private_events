@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  has_many :created_events, :foreign_key => "creator_id", :class_name => "Event"
   def new
     @user = User.new
   end
