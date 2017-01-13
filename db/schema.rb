@@ -13,11 +13,11 @@
 
 ActiveRecord::Schema.define(version: 20170113094202) do
 
-  create_table "event_attendees", force: :cascade do |t|
-    t.integer  "event_attendee"
-    t.integer  "attendee_event"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+  create_table "event_attendees", id: false, force: :cascade do |t|
+    t.integer  "event_attendee_id"
+    t.integer  "attendee_event_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   create_table "events", force: :cascade do |t|

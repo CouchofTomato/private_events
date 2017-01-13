@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   def index
-    @events = Event.all
+    @past_events = Event.past
+    @future_events = Event.upcoming
   end
 
   def new
@@ -18,6 +19,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    @event_attendees = @event.attendees
   end
   
   private
